@@ -32,7 +32,7 @@
 
    <img width="449" alt="image" src="https://github.com/user-attachments/assets/74a208c9-378d-4200-a757-dbbb806c4112">
 
-   Доступ от машины B к маштне C
+   Доступ от машины B к машине C
 
    <img width="449" alt="image" src="https://github.com/user-attachments/assets/f7e92453-7815-469a-b458-89b04668f40f">
 
