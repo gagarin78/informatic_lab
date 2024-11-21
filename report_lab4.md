@@ -30,3 +30,17 @@ docker network inspect myNetwork
    RUN apt-get update && apt-get install -y libaa-bin
    RUN apt-get install -y iputils-ping
    ```
+2. В терминале прописываем команду `sudo docker build -t mycontainer1`, которая создает новый образ из Dockerfile, котрый находится в текущем каталоге. Созданому образу даем название mycontainer1
+3. После этого создаем еще один образ из Dockerfile, но уже с название mycontainer2
+4. Далее с помощью команды `docker run -it <name_of_container>` проверяем работу приложения aafire в каждом созданном образе. После этого прописываем `aafire`, что в свою очередь выводит на экран анимацию огня
+
+    <img width="449" alt="image" src="https://github.com/user-attachments/assets/34cc7de0-6398-42bc-907e-2a0040ca0b87">
+5. Теперь создаем сеть, к которой будем подключать наши контейнеры. Для этого прописываем команду `docker network create myNetwork`
+6. С помощью команды `docker network connect myNetwork <name_of_container>` подключаем контейнеры к созданной сети
+7. Команда `docker network inspect myNetwork` позволяет увидеть настройки нашей сети myNetwork
+
+   <img width="449" alt="image" src="https://github.com/user-attachments/assets/3c0bcead-950f-4678-aa3a-4c3feef87254">
+
+8. Последний шаг - проверяем тестируем соединение между контейнерами с помощью команды `docker exec -it mycontainer1 ping mycontainer2`
+
+      <img width="449" alt="image" src="https://github.com/user-attachments/assets/29b9c73d-0bee-4999-9676-1bd3e7827a67">
