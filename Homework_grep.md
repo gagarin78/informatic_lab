@@ -57,4 +57,5 @@ Learn Linux commands
 
 ## Ресурсы
 https://selectel.ru/blog/tutorials/grep-command-in-linux/
+
 https://ru.hexlet.io/courses/cli-basics/lessons/grep/theory_unit
