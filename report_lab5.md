@@ -56,5 +56,39 @@
 
 6. Вывод: мы получили работоспособный hook, который проверяет файлы перед коммитом
 
+## Задание 2 - Использование Git Flow в проекте
+Предположим, у вас есть задача на создание новой функциональности для вашего проекта с использованием Git Flow. Давайте рассмотрим конкретный пример. В примере важен не сам проект и его код (его тут вообще как такового нет), а принцип работы Git Flow.
+## Рещение задания 2
+1. К сожаления на Mac нет команды `apt-get install`, но есть альтернатива - команда `brew install`
+2. Устанавливаем git_flow с помощью команды `brew install git-flow`
+3. Перемещаемся в папку репотзитория(проекта) и прописаваем `git flow init`. Этой командой мы инициализируем git flow. После этого прожимаем Enter, тем самым оставляя ветвление по умолчанию
+4. Далее создаем ветку для новой функциональности `task-management`
+    <img width="449" alt="image" src="https://github.com/user-attachments/assets/0c0cfd60-a99b-46ba-a2f8-af9bf02773e1">
+
+5. Затем в этой ветке мы создаем файл и вносим изменения, согласно условию из текста лабораторной работы. После этого добавляем и коммитим файл
+6. Для завершения написания фичи прописываем в терминале команду `git flow feature finish task-management`
+
+   <img width="449" alt="image" src="https://github.com/user-attachments/assets/3ff183e3-0a71-45e6-93bd-6b3705faa9b2">
+
+   Git Flow автоматически переключиться на ветку develop и сделает слияние
+7. Затем нужно создать релиз с помощью команды `git flow release start v1.0.0`
+    
+   <img width="449" alt="image" src="https://github.com/user-attachments/assets/c3df61f5-7d81-48a4-93f0-a91675db62a4">
+   
+8. После этого создаем текстовый файл version.txt, в который внесем изменения с помощью команды `echo "v1.0.0" > version.txt`. Потом нужно добавить и закоммитить файл
+9. Прописав команду `git flow release finish v1.0.0` мы завершаем релиз
+10. Теперь нужно создать изменения (hotfix). Прописываем команду `git flow hotfix start hotfix-1.0.1`
+
+    <img width="449" alt="image" src="https://github.com/user-attachments/assets/85d30085-1a37-45bf-b66b-5f5bdd85afd9">
+
+11. После этого нужно внести изменения в файл командой `echo "# Исправлено!" >> file_with_error.py`. Затем добавляем и коммитим файл file_with_error
+12. Теперь просто завершаем hotfix командой `git flow hotfix finish hotfix-1.0.1`
+
+   <img width="449" alt="image" src="https://github.com/user-attachments/assets/bc7b5b6c-d357-430f-86fa-0c5958e6178e">
+
+
+13.Последний шаг - отправляем изменения в репозиторий
+
+   <img width="449" alt="image" src="https://github.com/user-attachments/assets/581859c2-e1b6-489b-83a9-4b4513410f75">
 
 
